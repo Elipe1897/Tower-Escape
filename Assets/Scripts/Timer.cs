@@ -6,7 +6,6 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     private TMP_Text textTimer;
-
     private float timer = 0.0f;
     private bool isTimer = false;
 
