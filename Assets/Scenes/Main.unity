@@ -339,7 +339,7 @@ Transform:
   - {fileID: 748217491}
   - {fileID: 1384453436}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &280079346
 Rigidbody2D:
@@ -600,9 +600,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.36, y: -2.2668, z: 0}
   m_LocalScale: {x: 0.9006, y: 1.5465, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 622541783}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &324527928
 Rigidbody2D:
@@ -619,7 +620,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -665,7 +666,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Left: 276
   Right: 275
-  speed: 3
+  groundCheckCollider: {fileID: 622541783}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  speed: 1
+  isGrounded: 1
 --- !u!1 &327599342
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +684,7 @@ GameObject:
   - component: {fileID: 327599343}
   - component: {fileID: 327599346}
   - component: {fileID: 327599345}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +815,7 @@ GameObject:
   - component: {fileID: 356624788}
   - component: {fileID: 356624791}
   - component: {fileID: 356624790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1081,7 @@ GameObject:
   - component: {fileID: 391764783}
   - component: {fileID: 391764786}
   - component: {fileID: 391764785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1206,7 +1212,7 @@ GameObject:
   - component: {fileID: 401757338}
   - component: {fileID: 401757340}
   - component: {fileID: 401757339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform11 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1337,7 +1343,7 @@ GameObject:
   - component: {fileID: 415099462}
   - component: {fileID: 415099465}
   - component: {fileID: 415099464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1468,7 +1474,7 @@ GameObject:
   - component: {fileID: 423879619}
   - component: {fileID: 423879622}
   - component: {fileID: 423879621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,7 +1736,7 @@ GameObject:
   - component: {fileID: 460945772}
   - component: {fileID: 460945774}
   - component: {fileID: 460945773}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform8 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1943,7 +1949,7 @@ GameObject:
   - component: {fileID: 482925027}
   - component: {fileID: 482925029}
   - component: {fileID: 482925028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform9 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2074,7 +2080,7 @@ GameObject:
   - component: {fileID: 527966891}
   - component: {fileID: 527966894}
   - component: {fileID: 527966893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2144,7 +2150,7 @@ Transform:
   m_LocalScale: {x: 1.1502411, y: 0.5747, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &527966893
 BoxCollider2D:
@@ -2275,6 +2281,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &599740205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599740206}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &599740206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599740205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1445251173}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600811363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,7 +2394,37 @@ Transform:
   - {fileID: 1341928501}
   - {fileID: 480257809}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &622541782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622541783}
+  m_Layer: 0
+  m_Name: GroundChek
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &622541783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622541782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.474, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 324527927}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &644173471
 GameObject:
@@ -2372,7 +2438,7 @@ GameObject:
   - component: {fileID: 644173472}
   - component: {fileID: 644173475}
   - component: {fileID: 644173474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2635,7 +2701,7 @@ GameObject:
   - component: {fileID: 778318802}
   - component: {fileID: 778318805}
   - component: {fileID: 778318804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2898,7 +2964,7 @@ GameObject:
   - component: {fileID: 807980336}
   - component: {fileID: 807980339}
   - component: {fileID: 807980338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2968,7 +3034,7 @@ Transform:
   m_LocalScale: {x: 4.783709, y: 0.5747, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &807980338
 BoxCollider2D:
@@ -3029,7 +3095,7 @@ GameObject:
   - component: {fileID: 871831605}
   - component: {fileID: 871831608}
   - component: {fileID: 871831607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3505,7 +3571,7 @@ GameObject:
   - component: {fileID: 975441241}
   - component: {fileID: 975441244}
   - component: {fileID: 975441243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3636,7 +3702,7 @@ GameObject:
   - component: {fileID: 1009472677}
   - component: {fileID: 1009472680}
   - component: {fileID: 1009472679}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3767,7 +3833,7 @@ GameObject:
   - component: {fileID: 1049448068}
   - component: {fileID: 1049448070}
   - component: {fileID: 1049448069}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3899,7 +3965,7 @@ GameObject:
   - component: {fileID: 1065811175}
   - component: {fileID: 1065811178}
   - component: {fileID: 1065811177}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4165,7 +4231,7 @@ GameObject:
   - component: {fileID: 1191485494}
   - component: {fileID: 1191485496}
   - component: {fileID: 1191485497}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4297,7 +4363,7 @@ GameObject:
   - component: {fileID: 1237300476}
   - component: {fileID: 1237300479}
   - component: {fileID: 1237300478}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4428,7 +4494,7 @@ GameObject:
   - component: {fileID: 1291124766}
   - component: {fileID: 1291124768}
   - component: {fileID: 1291124767}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform12 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4559,7 +4625,7 @@ GameObject:
   - component: {fileID: 1336306640}
   - component: {fileID: 1336306643}
   - component: {fileID: 1336306642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4903,7 +4969,7 @@ GameObject:
   - component: {fileID: 1410483257}
   - component: {fileID: 1410483259}
   - component: {fileID: 1410483260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5104,7 +5170,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.3697, y: -2.2668, z: 0}
   m_LocalScale: {x: 0.9006, y: 1.5465, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 599740206}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5149,7 +5216,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5169,7 +5236,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Left: 97
   Right: 100
+  groundCheckCollider: {fileID: 599740206}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
   speed: 3
+  isGrounded: 0
 --- !u!1 &1482737517
 GameObject:
   m_ObjectHideFlags: 0
@@ -5182,7 +5254,7 @@ GameObject:
   - component: {fileID: 1482737519}
   - component: {fileID: 1482737521}
   - component: {fileID: 1482737520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5313,7 +5385,7 @@ GameObject:
   - component: {fileID: 1517602516}
   - component: {fileID: 1517602519}
   - component: {fileID: 1517602518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5445,7 +5517,7 @@ GameObject:
   - component: {fileID: 1609746533}
   - component: {fileID: 1609746536}
   - component: {fileID: 1609746535}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5644,7 +5716,7 @@ Transform:
   m_LocalScale: {x: 19.932858, y: 5.9904647, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1632780310
 GameObject:
@@ -5658,7 +5730,7 @@ GameObject:
   - component: {fileID: 1632780311}
   - component: {fileID: 1632780314}
   - component: {fileID: 1632780313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5856,7 +5928,7 @@ GameObject:
   - component: {fileID: 1683213581}
   - component: {fileID: 1683213583}
   - component: {fileID: 1683213582}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6118,7 +6190,7 @@ GameObject:
   - component: {fileID: 1760928447}
   - component: {fileID: 1760928450}
   - component: {fileID: 1760928449}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6249,7 +6321,7 @@ GameObject:
   - component: {fileID: 1813337815}
   - component: {fileID: 1813337817}
   - component: {fileID: 1813337816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform6 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6380,7 +6452,7 @@ GameObject:
   - component: {fileID: 1882537069}
   - component: {fileID: 1882537072}
   - component: {fileID: 1882537071}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6511,7 +6583,7 @@ GameObject:
   - component: {fileID: 1927943480}
   - component: {fileID: 1927943483}
   - component: {fileID: 1927943482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6643,7 +6715,7 @@ GameObject:
   - component: {fileID: 1953559444}
   - component: {fileID: 1953559447}
   - component: {fileID: 1953559446}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6774,7 +6846,7 @@ GameObject:
   - component: {fileID: 1964959973}
   - component: {fileID: 1964959976}
   - component: {fileID: 1964959975}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7039,7 +7111,7 @@ GameObject:
   - component: {fileID: 2001931123}
   - component: {fileID: 2001931125}
   - component: {fileID: 2001931124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7170,7 +7242,7 @@ GameObject:
   - component: {fileID: 2021169733}
   - component: {fileID: 2021169736}
   - component: {fileID: 2021169735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7302,7 +7374,7 @@ GameObject:
   - component: {fileID: 2031716463}
   - component: {fileID: 2031716466}
   - component: {fileID: 2031716465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7433,7 +7505,7 @@ GameObject:
   - component: {fileID: 2057284366}
   - component: {fileID: 2057284368}
   - component: {fileID: 2057284367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform13 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7679,7 +7751,7 @@ GameObject:
   - component: {fileID: 2110366700}
   - component: {fileID: 2110366703}
   - component: {fileID: 2110366702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plattform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
