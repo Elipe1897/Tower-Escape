@@ -5,6 +5,8 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer instance;
+
     public TMP_Text textTimer;
 
     [SerializeField]
@@ -15,6 +17,10 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         isTimer = true;
+    }
+    private void Awake()
+    {
+        instance = this;
     }
 
     // Update is called once per frame
