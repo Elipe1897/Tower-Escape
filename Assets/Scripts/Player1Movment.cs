@@ -60,4 +60,12 @@ public class Player1Movment : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
         }*/
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Spike")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
