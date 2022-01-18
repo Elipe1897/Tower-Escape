@@ -5,24 +5,32 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    private TMP_Text textTimer;
+    public static Timer instance;
+
+    public TMP_Text textTimer;
+
+    [SerializeField]
     private float timer = 0.0f;
+
     private bool isTimer = false;
 
     private void Start()
     {
         isTimer = true;
     }
-
-    public void Stoptimer()
+    private void Awake()
     {
-        isTimer = false;
+        instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isTimer)
+        {
+            timer += Time.deltaTime;
+            Displaytime();
+        }
     }
 
     void Displaytime()
@@ -30,5 +38,16 @@ public class Timer : MonoBehaviour
         int minutes = Mathf.FloorToInt(timer / 60f);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         textTimer.text=string.Format("{0:00}:{1:00}", minutes, seconds); 
+    } 
+    public void Stoptimer()
+    {
+        isTimer = false;
     }
+
+    public void ResetTimer()
+    {
+        timer = 0.0f;
+    }
+
+
 }
