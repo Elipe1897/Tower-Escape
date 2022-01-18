@@ -12,7 +12,7 @@ public class ButtonScript : MonoBehaviour
     }
     public void play()
     {
-        SceneManager.LoadScene("Game"); //Loads the game scene - Leo N
+        SceneManager.LoadScene("Main"); //Loads the game scene - Leo N
     }
     public void settings()
     {
