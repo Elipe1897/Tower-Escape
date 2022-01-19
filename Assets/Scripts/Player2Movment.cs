@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player2Movment : MonoBehaviour
 {
     [SerializeField]                   //variabler som håller koll på vilka tangenter som styr Player 1 -Lisa
-    private KeyCode Left;
+    private KeyCode Left;              
     [SerializeField]
     private KeyCode Right;
     [SerializeField] Transform groundCheckCollider;
@@ -31,7 +31,7 @@ public class Player2Movment : MonoBehaviour
     void GroundCheck()
     {
         isGrounded = false;
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckCollider.position, groundCheckRadius, groundLayer);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckCollider.position, groundCheckRadius, groundLayer); //kollar om groundCeck nuddar "Ground" -Lisa
         if (colliders.Length > 0)
             if (isGrounded = true && (Input.GetKey(KeyCode.UpArrow))) //om man nuddar en plattform och trycker ner upp piltangenten så hoppar Player2 -Lisa
             {
@@ -55,14 +55,10 @@ public class Player2Movment : MonoBehaviour
             transform.position += new Vector3(speed, 0, 0) * Time.fixedDeltaTime;
         }
 
-        /* if (isGrounded = true && (Input.GetKeyDown(KeyCode.W)))  //om man trycker ner "W" hoppar Player1
-         {
-             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
-         }*/
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Spike")
+        if (collision.transform.tag == "Spike" || collision.transform.tag == "Toxic")
         {
             Destroy(gameObject);
         }
