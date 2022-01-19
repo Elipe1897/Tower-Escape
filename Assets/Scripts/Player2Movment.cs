@@ -55,10 +55,20 @@ public class Player2Movment : MonoBehaviour
             transform.position += new Vector3(speed, 0, 0) * Time.fixedDeltaTime;
         }
 
-        /* if (isGrounded = true && (Input.GetKeyDown(KeyCode.W)))  //om man trycker ner "W" hoppar Player1
-         {
-             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
-         }*/
+        Vector3 characterScale = transform.localScale;
+
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            characterScale.x = -0.35f;
+        }
+
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            characterScale.x = 0.35f;
+
+        }
+        transform.localScale = characterScale;
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
