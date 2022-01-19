@@ -10,11 +10,11 @@ public class Acid : MonoBehaviour
     {
         transform.position += new Vector3(0, 0.5f, 0) * Time.deltaTime;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.transform.tag == "Player")
         {
             Health.instance.AcidDamage();
         }
-    }
+    }*/
 }
