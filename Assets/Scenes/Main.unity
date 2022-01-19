@@ -532,9 +532,10 @@ GameObject:
   - component: {fileID: 324527929}
   - component: {fileID: 324527928}
   - component: {fileID: 324527930}
+  - component: {fileID: 324527931}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -672,6 +673,23 @@ MonoBehaviour:
     m_Bits: 256
   speed: 1
   isGrounded: 1
+--- !u!114 &324527931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324527925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3203bd094a971f843bbba30901156011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0
+  hearts: []
+  fullheart: {fileID: 0}
+  emptyheart: {fileID: 0}
 --- !u!1 &327599342
 GameObject:
   m_ObjectHideFlags: 0
@@ -5102,9 +5120,10 @@ GameObject:
   - component: {fileID: 1445251175}
   - component: {fileID: 1445251174}
   - component: {fileID: 1445251176}
+  - component: {fileID: 1445251177}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5240,8 +5259,26 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  speed: 3
+  speed: 1
   isGrounded: 0
+--- !u!114 &1445251177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445251171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3203bd094a971f843bbba30901156011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 0
+  hearts:
+  - {fileID: 0}
+  fullheart: {fileID: 21300000, guid: 28f1c5942f8b0354cb1fbd1baf3b1c4a, type: 3}
+  emptyheart: {fileID: 0}
 --- !u!1 &1482737517
 GameObject:
   m_ObjectHideFlags: 0
@@ -5646,6 +5683,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1627896106}
   - component: {fileID: 1627896105}
+  - component: {fileID: 1627896107}
+  - component: {fileID: 1627896108}
   m_Layer: 0
   m_Name: Acid
   m_TagString: Untagged
@@ -5718,6 +5757,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1627896107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627896104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42be34d6ca7b6d4418a6606c93ff068e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1627896108
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627896104}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1632780310
 GameObject:
   m_ObjectHideFlags: 0
