@@ -10,7 +10,7 @@ public class Player1Movment : MonoBehaviour
     private KeyCode Right;
     [SerializeField] Transform groundCheckCollider;
     [SerializeField] LayerMask groundLayer;
-
+    public AudioSource Hoppi;
     const float groundCheckRadius = 0.2f;
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
     private float speed = 5;
@@ -20,7 +20,7 @@ public class Player1Movment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Hoppi = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -36,6 +36,7 @@ public class Player1Movment : MonoBehaviour
             if (isGrounded = true && (Input.GetKey(KeyCode.W))) //om man nuddar en plattform och trycker ner "W" så hoppar Player1 -Lisa
             {
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
+                Hoppi.Play();
             }
 
     }
