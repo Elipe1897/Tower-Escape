@@ -58,7 +58,7 @@ public class Player2Movment : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Spike")
+        if (collision.transform.tag == "Spike" || collision.transform.tag == "Toxic")
         {
             Destroy(gameObject);
         }
