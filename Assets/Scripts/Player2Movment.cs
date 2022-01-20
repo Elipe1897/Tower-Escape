@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player2Movment : MonoBehaviour
 {
@@ -31,7 +33,7 @@ public class Player2Movment : MonoBehaviour
 
     void GroundCheck()
     {
-        isGrounded = false;
+      
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckCollider.position, groundCheckRadius, groundLayer); //kollar om groundCeck nuddar "Ground" -Lisa
         if (colliders.Length > 0)
             if (isGrounded = true && (Input.GetKey(KeyCode.UpArrow))) //om man nuddar en plattform och trycker ner upp piltangenten så hoppar Player2 -Lisa
@@ -81,7 +83,7 @@ public class Player2Movment : MonoBehaviour
         if(collision.transform.tag == "Toxic")
         {
             Health.instance.AcidDamage();
-            transform.position = new Vector3(20, 20, 0);
+            transform.position = new Vector3(-20, 20, 0);
         }
     }
 }

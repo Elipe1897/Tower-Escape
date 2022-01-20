@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player1Movment : MonoBehaviour
 {
+    
     [SerializeField]                   //variabler som håller koll på vilka tangenter som styr Player 1 -Lisa
     private KeyCode Left;
     [SerializeField]
@@ -19,6 +21,7 @@ public class Player1Movment : MonoBehaviour
     [SerializeField] bool hitSomething = false;
     
 
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -118,7 +121,10 @@ public class Player1Movment : MonoBehaviour
             HealthP1.instance.AcidDamage2();
             transform.position = new Vector3(-20, 20, 0);
         }
-       
+       if(collision.transform.tag == "Player")
+        {
+            SceneManager.LoadScene("Death");
+        }
     }
     
    
