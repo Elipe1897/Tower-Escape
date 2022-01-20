@@ -37,10 +37,14 @@ public class Health : MonoBehaviour
             }
         }
         // If your health is below 1 the "GameOver" scene will load.
-      /*if (currentHealth < 1)
+        /*if (currentHealth < 1)
+          {
+              SceneManager.LoadScene("Death");
+          }*/
+        if (currentHealth == 0)
         {
-            SceneManager.LoadScene("Death");
-        }*/
+            transform.position = new Vector3(-20, 20, 0);
+        }
     }
 
     public void TakeDamage()
