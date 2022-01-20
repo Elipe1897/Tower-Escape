@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Spike
   - Toxic
+  - Platform
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -40,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: bakgrund
+    uniqueID: 1180837815
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 1494620327
     locked: 0

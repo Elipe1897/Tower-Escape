@@ -1,0 +1,540 @@
+fileFormatVersion: 2
+guid: 5d0e592569a8b614f827c87c5ae2b680
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6982353935148398463
+    second: Walk_Purple_Dude_-TE_0
+  - first:
+      213: -3873621272726839255
+    second: Walk_Purple_Dude_-TE_1
+  - first:
+      213: -178213790991727452
+    second: Walk_Purple_Dude_-TE_2
+  - first:
+      213: -391306652115973990
+    second: Walk_Purple_Dude_-TE_3
+  - first:
+      213: -1506452195360185792
+    second: Walk_Purple_Dude_-TE_4
+  - first:
+      213: 4424743600127685699
+    second: Walk_Purple_Dude_-TE_5
+  - first:
+      213: 9055262757702302957
+    second: Walk_Purple_Dude_-TE_6
+  - first:
+      213: -8278970680369460453
+    second: Walk_Purple_Dude_-TE_7
+  - first:
+      213: 8134661909119506236
+    second: Walk_Purple_Dude_-TE_8
+  - first:
+      213: 5388693469817969323
+    second: Walk_Purple_Dude_-TE_9
+  - first:
+      213: 5815359136790104975
+    second: Walk_Purple_Dude_-TE_10
+  - first:
+      213: -4855734412019773361
+    second: Walk_Purple_Dude_-TE_11
+  - first:
+      213: -7109956273639670444
+    second: Walk_Purple_Dude_-TE_12
+  - first:
+      213: -5238337213044540901
+    second: Walk_Purple_Dude_-TE_13
+  - first:
+      213: 5359136599541612398
+    second: Walk_Purple_Dude_-TE_14
+  - first:
+      213: -4025970766877460235
+    second: Walk_Purple_Dude_-TE_15
+  - first:
+      213: 2565710512085662851
+    second: Walk_Purple_Dude_-TE_16
+  - first:
+      213: 3919563484476066116
+    second: Walk_Purple_Dude_-TE_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_0
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 2728
+        width: 318
+        height: 551
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188cd6f0712b91f90800000000000000
+      internalID: -6982353935148398463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_1
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 2728
+        width: 320
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92068bcc9f12e3ac0800000000000000
+      internalID: -3873621272726839255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_2
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 2728
+        width: 318
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4ccd5508bd68df0800000000000000
+      internalID: -178213790991727452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_3
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 2728
+        width: 320
+        height: 551
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9841625cacc19af0800000000000000
+      internalID: -391306652115973990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_4
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 2057
+        width: 318
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042e278b5b1081be0800000000000000
+      internalID: -1506452195360185792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_5
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 2057
+        width: 320
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3443bcb6cd8d76d30800000000000000
+      internalID: 4424743600127685699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_6
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 2057
+        width: 318
+        height: 549
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec7ba45081caad70800000000000000
+      internalID: 9055262757702302957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_7
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 2057
+        width: 320
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b44b2b7003b1d80800000000000000
+      internalID: -8278970680369460453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_8
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1384
+        width: 318
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3718f438ef14e070800000000000000
+      internalID: 8134661909119506236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_9
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 1384
+        width: 320
+        height: 549
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa97f7092c78ca40800000000000000
+      internalID: 5388693469817969323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_10
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 1384
+        width: 318
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b42b5e25e44b050800000000000000
+      internalID: 5815359136790104975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_11
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 1384
+        width: 320
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40dbef6747fc9cb0800000000000000
+      internalID: -4855734412019773361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_12
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 711
+        width: 318
+        height: 551
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45db525707c545d90800000000000000
+      internalID: -7109956273639670444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_13
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 711
+        width: 320
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a35c20f00bd47b0800000000000000
+      internalID: -5238337213044540901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_14
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 711
+        width: 318
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ff876e75a7f5a40800000000000000
+      internalID: 5359136599541612398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_15
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 711
+        width: 320
+        height: 551
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f879240be0e028c0800000000000000
+      internalID: -4025970766877460235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_16
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 40
+        width: 318
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38cf955fd1c3b9320800000000000000
+      internalID: 2565710512085662851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_Purple_Dude_-TE_17
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 40
+        width: 320
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449c9cee836156630800000000000000
+      internalID: 3919563484476066116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
