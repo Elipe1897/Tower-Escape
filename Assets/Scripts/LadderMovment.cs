@@ -19,7 +19,20 @@ public class LadderMovment : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
         if (isLadder && Mathf.Abs(vertical) >0) 
         {
-        
+            isClimbing = true;
+
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (isClimbing)
+        {
+            rb.gravityScale = 0;
+            rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
+        }
+        else 
+        {
+            rb.gravityScale = 4f;
         }
     }
 
