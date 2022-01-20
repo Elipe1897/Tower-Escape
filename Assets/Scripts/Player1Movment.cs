@@ -15,12 +15,14 @@ public class Player1Movment : MonoBehaviour
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
     private float speed = 5;
     [SerializeField] bool isGrounded = false;
+    public Animator animator;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Hoppi = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -30,13 +32,18 @@ public class Player1Movment : MonoBehaviour
 
     void GroundCheck()
     {
-        isGrounded = false;
+        //isGrounded = false;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckCollider.position, groundCheckRadius, groundLayer);
         if (colliders.Length > 0)
             if (isGrounded = true && (Input.GetKey(KeyCode.W))) //om man nuddar en plattform och trycker ner "W" så hoppar Player1 -Lisa
             {
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
                 Hoppi.Play();
+                animator.SetBool("isGrounded", true);
+            }
+            else
+            {
+                animator.SetBool("isGrounded", false);
             }
 
     }
@@ -50,10 +57,20 @@ public class Player1Movment : MonoBehaviour
         if (Input.GetKey(KeyCode.A))     //om man trycker ner "A" åker Player1 vänster -Lisa
         {
             transform.position -= new Vector3(speed, 0, 0) * Time.fixedDeltaTime;
+            animator.SetFloat("Speed", 1);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 0);
         }
         if (Input.GetKey(KeyCode.D))    //om man trycker ner "D" åker Player1 höger -Lisa
         {
             transform.position += new Vector3(speed, 0, 0) * Time.fixedDeltaTime;
+            animator.SetFloat("Speed", 1);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 0);
         }
 
         Vector3 characterScale = transform.localScale;
@@ -69,13 +86,17 @@ public class Player1Movment : MonoBehaviour
 
         }
         transform.localScale = characterScale;
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Spike")
         {
             HealthP1.instance.TakeDamage2();
+            animator.SetBool("takeDamage", true);
+        }
+        else
+        {
+            animator.SetBool("takeDamage", false);
         }
         if (collision.transform.tag == "Toxic")
         {
