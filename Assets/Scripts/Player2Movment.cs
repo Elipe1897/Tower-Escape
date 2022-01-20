@@ -71,9 +71,14 @@ public class Player2Movment : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Spike" || collision.transform.tag == "Toxic")
+        if (collision.transform.tag == "Spike")
         {
-            Destroy(gameObject);
+            Health.instance.TakeDamage();
+        }
+        if(collision.transform.tag == "Toxic")
+        {
+            Health.instance.AcidDamage();
+            transform.position = new Vector3(20, 20, 0);
         }
     }
 }
