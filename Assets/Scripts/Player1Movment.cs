@@ -75,12 +75,12 @@ public class Player1Movment : MonoBehaviour
 
         Vector3 characterScale = transform.localScale;
 
-        if (Input.GetAxis("Horizontal") < 0)
+        if (Input.GetAxis("Horizontal2") < 0)
         {
             characterScale.x = -0.35f;
         }
 
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxis("Horizontal2") > 0)
         {
             characterScale.x = 0.35f;
 
