@@ -16,7 +16,8 @@ public class Player1Movment : MonoBehaviour
     private float speed = 5;
     [SerializeField] bool isGrounded = false;
     public Animator animator;
-
+    [SerializeField] bool hitSomething = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class Player1Movment : MonoBehaviour
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
                 Hoppi.Play();
                 animator.SetBool("isGrounded", false);
+            
             }
             else
             {
@@ -54,6 +56,7 @@ public class Player1Movment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         /*if (Input.GetKey(KeyCode.A))     //om man trycker ner "A" åker Player1 vänster -Lisa
         {
             transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
@@ -70,10 +73,12 @@ public class Player1Movment : MonoBehaviour
         if (Input.GetAxis("Horizontal2") < 0)
         {
             animator.SetBool("isRunning", true);
+         
         }
         if (Input.GetAxis("Horizontal2") > 0)
         {
             animator.SetBool("isRunning", true);
+          
         }
         if (Input.GetAxis("Horizontal2") ==  0)
         {
@@ -105,6 +110,9 @@ public class Player1Movment : MonoBehaviour
         {
             animator.SetBool("hitSomething", false);
         }
+      
+
+
         if (collision.transform.tag == "Toxic")
         {
             HealthP1.instance.AcidDamage2();
@@ -112,5 +120,6 @@ public class Player1Movment : MonoBehaviour
         }
        
     }
-
+    
+   
 }
