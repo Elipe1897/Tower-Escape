@@ -18,6 +18,12 @@ public class ButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene("Settings"); //Loads the settings scene - Leo N
     }
+    public void mainmenu()
+    {
+        SceneManager.LoadScene("MainMeny"); //Loads the credit scene - Leo N
+
+
+    }
 
     public void credit()
     {
