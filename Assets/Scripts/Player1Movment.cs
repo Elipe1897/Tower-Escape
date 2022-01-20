@@ -13,7 +13,7 @@ public class Player1Movment : MonoBehaviour
     public AudioSource Hoppi;
     const float groundCheckRadius = 0.2f;
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
-    private float speed = 4;
+    private float speed = 5;
     [SerializeField] bool isGrounded = false;
     public Animator animator;
 
