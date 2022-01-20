@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class Health : MonoBehaviour
+public class HealthP1 : MonoBehaviour
 {
-    public static Health instance; // Creates a instance called Health.
+    public static HealthP1 instance; // Creates a instance called Health.
     public int maxHealth = 3; // A variable for your max health.
     public int currentHealth; // A variable for you current health.
     public Image[] hearts; // A variable for the hearts array.
@@ -37,19 +37,19 @@ public class Health : MonoBehaviour
             }
         }
         // If your health is below 1 the "GameOver" scene will load.
-      /*if (currentHealth < 1)
-        {
-            SceneManager.LoadScene("Death");
-        }*/
+        /*if (currentHealth < 1)
+          {
+              SceneManager.LoadScene("Death");
+          }*/
     }
 
-    public void TakeDamage()
+    public void TakeDamage2()
     {
         currentHealth -= 1; // makes you lose health
     }
-    public void AcidDamage()
+    public void AcidDamage2()
     {
         currentHealth = 0; // makes you ded
     }
-    
+
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreSystem : MonoBehaviour
+public class Spikes : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,13 @@ public class ScoreSystem : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.transform.tag == "Toxic" ||collision.transform.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }

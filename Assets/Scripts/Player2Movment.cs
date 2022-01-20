@@ -13,7 +13,7 @@ public class Player2Movment : MonoBehaviour
 
     const float groundCheckRadius = 0.2f;
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
-    private float speed = 4;
+    private float speed = 5s;
     [SerializeField] bool isGrounded = false;
 
 
@@ -55,12 +55,30 @@ public class Player2Movment : MonoBehaviour
             transform.position += new Vector3(speed, 0, 0) * Time.fixedDeltaTime;
         }
 
+        Vector3 characterScale = transform.localScale;
+
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            characterScale.x = -0.35f;
+        }
+
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            characterScale.x = 0.35f;
+
+        }
+        transform.localScale = characterScale;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Spike" || collision.transform.tag == "Toxic")
+        if (collision.transform.tag == "Spike")
         {
-            Destroy(gameObject);
+            Health.instance.TakeDamage();
+        }
+        if(collision.transform.tag == "Toxic")
+        {
+            Health.instance.AcidDamage();
+            transform.position = new Vector3(20, 20, 0);
         }
     }
 }
