@@ -37,6 +37,7 @@ public class Player2Movment : MonoBehaviour
             if (isGrounded = true && (Input.GetKey(KeyCode.UpArrow))) //om man nuddar en plattform och trycker ner upp piltangenten så hoppar Player2 -Lisa
             {
                 Hoppi.Play();
+               
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
             }
 
