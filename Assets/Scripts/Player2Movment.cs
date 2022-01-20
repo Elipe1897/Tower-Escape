@@ -11,6 +11,7 @@ public class Player2Movment : MonoBehaviour
     [SerializeField] Transform groundCheckCollider;
     [SerializeField] LayerMask groundLayer;
 
+    public AudioSource Hoppi;
     const float groundCheckRadius = 0.2f;
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
     private float speed = 5;
@@ -20,7 +21,7 @@ public class Player2Movment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Hoppi = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -35,6 +36,8 @@ public class Player2Movment : MonoBehaviour
         if (colliders.Length > 0)
             if (isGrounded = true && (Input.GetKey(KeyCode.UpArrow))) //om man nuddar en plattform och trycker ner upp piltangenten så hoppar Player2 -Lisa
             {
+                Hoppi.Play();
+               
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
             }
 
