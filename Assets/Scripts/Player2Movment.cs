@@ -14,7 +14,7 @@ public class Player2Movment : MonoBehaviour
     public AudioSource Hoppi;
     const float groundCheckRadius = 0.2f;
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
-    private float speed = 4;
+    private float speed = 5;
     [SerializeField] bool isGrounded = false;
 
 
@@ -50,11 +50,11 @@ public class Player2Movment : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))     //om man trycker ner vänstra pilt<ngänten åker Player2 vänster -Lisa
         {
-            transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
+            transform.position -= new Vector3(speed, 0, 0) * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.RightArrow))    //om man trycker ner högra piltangänten åker Player2 höger -Lisa
         {
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            transform.position += new Vector3(speed, 0, 0) * Time.fixedDeltaTime;
         }
 
         Vector3 characterScale = transform.localScale;
