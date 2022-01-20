@@ -42,7 +42,10 @@ public class HealthP1 : MonoBehaviour
           {
               SceneManager.LoadScene("Death");
           }*/
-
+        if(currentHealth == 0)
+        {
+            transform.position = new Vector3(-20, 20, 0);
+        }
     }
 
     public void TakeDamage2()
@@ -55,5 +58,6 @@ public class HealthP1 : MonoBehaviour
     {
         currentHealth = 0; // makes you ded
     }
+
 
 }
