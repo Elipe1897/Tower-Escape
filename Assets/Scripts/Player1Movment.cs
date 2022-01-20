@@ -56,22 +56,22 @@ public class Player1Movment : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))     //om man trycker ner "A" åker Player1 vänster -Lisa
         {
-            transform.position -= new Vector3(speed, 0, 0) * Time.fixedDeltaTime;
-            animator.SetFloat("Speed", 1);
+            transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
+            animator.SetFloat("Speed", speed);
         }
-        else
+        /*else
         {
             animator.SetFloat("Speed", 0);
-        }
+        }*/
         if (Input.GetKey(KeyCode.D))    //om man trycker ner "D" åker Player1 höger -Lisa
         {
-            transform.position += new Vector3(speed, 0, 0) * Time.fixedDeltaTime;
-            animator.SetFloat("Speed", 1);
+            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            animator.SetFloat("Speed", speed);
         }
-        else
+        /*else
         {
             animator.SetFloat("Speed", 0);
-        }
+        }*/
 
         Vector3 characterScale = transform.localScale;
 
