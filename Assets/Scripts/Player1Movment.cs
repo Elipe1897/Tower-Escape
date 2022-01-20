@@ -39,11 +39,11 @@ public class Player1Movment : MonoBehaviour
             {
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
                 Hoppi.Play();
-                animator.SetBool("isGrounded", true);
+                animator.SetBool("isGrounded", false);
             }
             else
             {
-                animator.SetBool("isGrounded", false);
+                animator.SetBool("isGrounded", true);
             }
 
     }
@@ -54,24 +54,31 @@ public class Player1Movment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))     //om man trycker ner "A" åker Player1 vänster -Lisa
+        /*if (Input.GetKey(KeyCode.A))     //om man trycker ner "A" åker Player1 vänster -Lisa
         {
             transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
-            animator.SetFloat("Speed", speed);
+            animator.SetBool("isRunning", true);
         }
-        /*else
-        {
-            animator.SetFloat("Speed", 0);
-        }*/
+       
         if (Input.GetKey(KeyCode.D))    //om man trycker ner "D" åker Player1 höger -Lisa
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
-            animator.SetFloat("Speed", speed);
-        }
-        /*else
-        {
-            animator.SetFloat("Speed", 0);
+            animator.SetBool("isRunning", true);
         }*/
+        float moveX = Input.GetAxis("Horizontal2");
+        transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed;
+        if (Input.GetAxis("Horizontal2") < 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        if (Input.GetAxis("Horizontal2") > 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        if (Input.GetAxis("Horizontal2") ==  0)
+        {
+            animator.SetBool("isRunning", false);
+        }
 
         Vector3 characterScale = transform.localScale;
 
@@ -92,17 +99,18 @@ public class Player1Movment : MonoBehaviour
         if (collision.transform.tag == "Spike")
         {
             HealthP1.instance.TakeDamage2();
-            animator.SetBool("takeDamage", true);
+            animator.SetBool("hitSomething", true);
         }
         else
         {
-            animator.SetBool("takeDamage", false);
+            animator.SetBool("hitSomething", false);
         }
         if (collision.transform.tag == "Toxic")
         {
             HealthP1.instance.AcidDamage2();
             transform.position = new Vector3(-20, 20, 0);
         }
+       
     }
 
 }
