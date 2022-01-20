@@ -8,6 +8,7 @@ TagManager:
   - Toxic
   - Platform
   - Ladder
+  - Ded
   layers:
   - Default
   - TransparentFX

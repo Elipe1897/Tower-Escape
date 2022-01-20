@@ -11,7 +11,7 @@ public class HealthP1 : MonoBehaviour
     public Image[] hearts; // A variable for the hearts array.
     public Sprite fullheart; // A variable for the full heart sprite.
     public Sprite emptyheart; // A variable for the empty heart sprite.
-
+    public Animator animator;
 
     private void Awake()
     {
@@ -21,6 +21,7 @@ public class HealthP1 : MonoBehaviour
     private void Start()
     {
         currentHealth = 3; // When the game starts your health is set to 3.
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -41,12 +42,15 @@ public class HealthP1 : MonoBehaviour
           {
               SceneManager.LoadScene("Death");
           }*/
+
     }
 
     public void TakeDamage2()
     {
         currentHealth -= 1; // makes you lose health
+        
     }
+    
     public void AcidDamage2()
     {
         currentHealth = 0; // makes you ded

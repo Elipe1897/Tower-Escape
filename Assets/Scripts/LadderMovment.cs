@@ -8,11 +8,15 @@ public class LadderMovment : MonoBehaviour
     private float speed = 8f;     //variabel för speed -Lisa
     private bool isLadder;          //variabel för att kunna se om man är vid en stege -Lisa
     private bool isClimbing;      //variabel för att se om man redan klättrar -Lisa
+    public Animator animator;
 
     [SerializeField] private Rigidbody2D rb;
 
-    
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +24,7 @@ public class LadderMovment : MonoBehaviour
         if (isLadder && Mathf.Abs(vertical) >0) 
         {
             isClimbing = true;
-
+            animator.SetBool("isClimbing", true);
         }
     }
     private void FixedUpdate()
@@ -41,6 +45,7 @@ public class LadderMovment : MonoBehaviour
         if (collision.CompareTag("Ladder")) 
         {
             isLadder = true;
+            animator.SetBool("isClimbing", true);
         }
     }
 
@@ -50,6 +55,7 @@ public class LadderMovment : MonoBehaviour
         {
             isLadder = false;
             isClimbing = false;
+            animator.SetBool("isClimbing", false);
         }
     }
 }
