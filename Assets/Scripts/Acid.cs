@@ -5,10 +5,10 @@ using UnityEngine;
 public class Acid : MonoBehaviour
 {
     public float timer = 0;
+  
 
     private void Start()
     {
-       
     }
     // Update is called once per frame
     void Update()
