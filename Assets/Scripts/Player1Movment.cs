@@ -18,7 +18,7 @@ public class Player1Movment : MonoBehaviour
     private float speed = 5;
     [SerializeField] bool isGrounded = false;
     public Animator animator;
-    [SerializeField] bool hitSomething = false;
+    
     
 
    
@@ -36,7 +36,7 @@ public class Player1Movment : MonoBehaviour
 
     void GroundCheck()
     {
-        //isGrounded = false;
+        
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckCollider.position, groundCheckRadius, groundLayer);
         if (colliders.Length > 0)
             if (isGrounded = true && (Input.GetKey(KeyCode.W))) //om man nuddar en plattform och trycker ner "W" så hoppar Player1 -Lisa
@@ -107,15 +107,7 @@ public class Player1Movment : MonoBehaviour
         if (collision.transform.tag == "Spike")
         {
             HealthP1.instance.TakeDamage2();
-            animator.SetBool("hitSomething", true);
         }
-        else
-        {
-            animator.SetBool("hitSomething", false);
-        }
-      
-
-
         if (collision.transform.tag == "Toxic")
         {
             HealthP1.instance.AcidDamage2();
@@ -124,6 +116,10 @@ public class Player1Movment : MonoBehaviour
        if(collision.transform.tag == "Player")
         {
             SceneManager.LoadScene("Death");
+        }
+       if(collision.transform.tag == "Platform")
+        {
+            isGrounded = true;
         }
     }
     

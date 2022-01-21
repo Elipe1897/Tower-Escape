@@ -18,7 +18,7 @@ public class Spikes : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.transform.tag == "Toxic" ||collision.transform.tag == "Player")
+        if(collision.transform.tag == "Toxic" ||collision.transform.tag == "Player" && collision.transform.tag == "Player1")
         {
             Destroy(gameObject);
         }

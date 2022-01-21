@@ -9,6 +9,9 @@ TagManager:
   - Platform
   - Ladder
   - Ded
+  - Key
+  - Player1
+  - Dead
   layers:
   - Default
   - TransparentFX
