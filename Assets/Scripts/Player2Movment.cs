@@ -41,12 +41,12 @@ public class Player2Movment : MonoBehaviour
             {
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
                 Hoppi.Play();
-                animator.SetBool("isGrounded", false);
+                animator.SetBool("isJumping", true);
 
             }
             else
             {
-                animator.SetBool("isGrounded", true);
+                animator.SetBool("isJumping", false);
             }
 
     }

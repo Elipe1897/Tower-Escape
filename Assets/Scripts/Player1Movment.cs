@@ -60,18 +60,20 @@ public class Player1Movment : MonoBehaviour
     void Update()
     {
        
-        /*if (Input.GetKey(KeyCode.A))     //om man trycker ner "A" åker Player1 vänster -Lisa
+       /* if (Input.GetKey(KeyCode.A))     //om man trycker ner "A" åker Player1 vänster -Lisa
         {
             transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
-            animator.SetBool("isRunning", true);
+            animator.SetFloat("Speed", -1);
         }
+     
        
         if (Input.GetKey(KeyCode.D))    //om man trycker ner "D" åker Player1 höger -Lisa
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
-            animator.SetBool("isRunning", true);
+            animator.SetFloat("Speed", 1);
         }*/
-        float moveX = Input.GetAxis("Horizontal2");
+       
+       float moveX = Input.GetAxis("Horizontal2");
         transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed;
         if (Input.GetAxis("Horizontal2") < 0)
         {
