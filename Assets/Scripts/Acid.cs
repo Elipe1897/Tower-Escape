@@ -17,7 +17,7 @@ public class Acid : MonoBehaviour
        
             if(timer > 2)
         {
-            transform.position += new Vector3(0, 0.5f, 0) * Time.deltaTime;
+            transform.position += new Vector3(0, 1f, 0) * Time.deltaTime;
         }
         
     }
