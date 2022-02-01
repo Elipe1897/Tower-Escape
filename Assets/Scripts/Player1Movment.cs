@@ -18,15 +18,19 @@ public class Player1Movment : MonoBehaviour
     private float speed = 5;
     [SerializeField] bool isGrounded = false;
     public Animator animator;
-    
-    
 
-   
+    public int doubbleJump = 0;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         Hoppi = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        doubbleJump = 0;
+
     }
 
     private void FixedUpdate()
@@ -44,7 +48,7 @@ public class Player1Movment : MonoBehaviour
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
                 Hoppi.Play();
                 animator.SetBool("isGrounded", false);
-            
+               powerUp();
             }
             else
             {
@@ -59,19 +63,7 @@ public class Player1Movment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-       /* if (Input.GetKey(KeyCode.A))     //om man trycker ner "A" åker Player1 vänster -Lisa
-        {
-            transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
-            animator.SetFloat("Speed", -1);
-        }
-     
-       
-        if (Input.GetKey(KeyCode.D))    //om man trycker ner "D" åker Player1 höger -Lisa
-        {
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
-            animator.SetFloat("Speed", 1);
-        }*/
+
        
        float moveX = Input.GetAxis("Horizontal2");
         transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed;
@@ -103,6 +95,10 @@ public class Player1Movment : MonoBehaviour
 
         }
         transform.localScale = characterScale;
+        if(doubbleJump == 2)
+        {
+            isGrounded = false;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -124,6 +120,13 @@ public class Player1Movment : MonoBehaviour
             isGrounded = true;
         }
     }
-    
-   
+    public void powerUp()
+    {
+        if (doubbleJump < 2 && Input.GetKey(KeyCode.W))
+        {
+            doubbleJump += 1;
+        }
+
+    }
+
 }

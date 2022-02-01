@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: 77a7a6ba52d06d04d8fdabaf401bb0c8
   - enabled: 0
-    path: Assets/Scenes/Victory.unity
+    path: 
     guid: f3468b372a903a64aa32dec97284c4b1
   - enabled: 1
     path: Assets/Scenes/Death.unity
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LilaVictory 2.unity
     guid: 452b11ed3ef6ed4449393cbb37a6198e
+  - enabled: 1
+    path: Assets/Scenes/LevelOne.unity
+    guid: 02809c26871983345a083430cd78736a
   m_configObjects: {}
