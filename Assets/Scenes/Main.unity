@@ -1603,7 +1603,7 @@ MonoBehaviour:
     m_Bits: 256
   animator: {fileID: 324527933}
   Hoppi: {fileID: 0}
-  speed: 5
+  speed: 6
   isGrounded: 1
 --- !u!114 &324527931
 MonoBehaviour:
@@ -7957,7 +7957,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e121a319c3901fd4ca17c99f5ca23a57, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6a27e4e7cbba905428a90dfc7bbd8032, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
