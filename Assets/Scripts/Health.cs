@@ -51,6 +51,10 @@ public class Health : MonoBehaviour
     {
         currentHealth -= 1; // makes you lose health
     }
+    public void GetHealth()
+    {
+        currentHealth += 1; // makes you lose health
+    }
     public void AcidDamage()
     {
         currentHealth = 0; // makes you ded

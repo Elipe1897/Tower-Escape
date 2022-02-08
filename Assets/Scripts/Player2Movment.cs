@@ -19,7 +19,6 @@ public class Player2Movment : MonoBehaviour
     private float speed = 5;
     [SerializeField] bool isGrounded = false;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -109,7 +108,5 @@ public class Player2Movment : MonoBehaviour
             Health.instance.AcidDamage();
             transform.position = new Vector3(-20, 20, 0);
         }
-       
-
     }
 }

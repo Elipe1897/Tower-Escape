@@ -53,7 +53,12 @@ public class HealthP1 : MonoBehaviour
         currentHealth -= 1; // makes you lose health
         
     }
-    
+    public void GetHealth2()
+    {
+        currentHealth += 1; // makes you lose health
+
+    }
+
     public void AcidDamage2()
     {
         currentHealth = 0; // makes you ded
