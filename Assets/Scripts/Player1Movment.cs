@@ -110,6 +110,7 @@ public class Player1Movment : MonoBehaviour
         {
             HealthP1.instance.AcidDamage2();
             transform.position = new Vector3(-20, 20, 0);
+            Debug.Log("Dead");
         }
        if(collision.transform.tag == "Player")
         {
