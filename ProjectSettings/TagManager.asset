@@ -12,8 +12,6 @@ TagManager:
   - Key
   - Player1
   - Dead
-  - ExtraLife
-  - Swap
   layers:
   - Default
   - TransparentFX
