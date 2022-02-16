@@ -20,7 +20,7 @@ public class Spikes : MonoBehaviour
     {
         if(collision.transform.tag == "Toxic" || collision.transform.tag == "Player" || collision.transform.tag == "Player1")
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // om objektn med taggarna "Toxic","Player","Player" nuddar så tars objektet koden ligger på borts - Elias 
         }
     }
 }

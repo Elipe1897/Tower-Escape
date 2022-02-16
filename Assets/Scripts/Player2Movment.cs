@@ -13,7 +13,7 @@ public class Player2Movment : MonoBehaviour
     [SerializeField] Transform groundCheckCollider;
     [SerializeField] LayerMask groundLayer;
     public Animator animator;
-    public AudioSource Hoppi;
+    public AudioSource Hoppi; // hoppi ljud variabel - Elias 
     const float groundCheckRadius = 0.2f;
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
     private float speed = 5;
@@ -23,7 +23,7 @@ public class Player2Movment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Hoppi = GetComponent<AudioSource>();
+        Hoppi = GetComponent<AudioSource>(); // gets hoppi ljud - Elias
         animator = GetComponent<Animator>();
     }
 
@@ -40,7 +40,7 @@ public class Player2Movment : MonoBehaviour
             if (isGrounded = true && (Input.GetKey(KeyCode.UpArrow))) //om man nuddar en plattform och trycker ner "W" så hoppar Player1 -Lisa
             {
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
-                Hoppi.Play();
+                Hoppi.Play(); // plays jump sound - Elias 
                 animator.SetBool("isJumping", true);
 
             }
@@ -57,17 +57,10 @@ public class Player2Movment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.LeftArrow))     //om man trycker ner vänstra pilt<ngänten åker Player2 vänster -Lisa
-        {
-            transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))    //om man trycker ner högra piltangänten åker Player2 höger -Lisa
-        {
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
-        }*/
        
-        float moveX = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed;
+       
+        float moveX = Input.GetAxis("Horizontal"); 
+        transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed; // movement - Elias 
         if (Input.GetAxis("Horizontal") < 0)
         {
             animator.SetBool("isRunning", true);
@@ -83,21 +76,21 @@ public class Player2Movment : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
-        Vector3 characterScale = transform.localScale;
+        Vector3 characterScale = transform.localScale; // spelarens ui byter rikning beroende vilken knapp som trycks - Elias 
 
-        if (Input.GetAxis("Horizontal") < 0)
+        if (Input.GetAxis("Horizontal") < 0) 
         {
             characterScale.x = -0.35f;
         }
 
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxis("Horizontal") > 0) 
         {
             characterScale.x = 0.35f;
 
         }
         transform.localScale = characterScale;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) 
     {
         if (collision.transform.tag == "Spike")
         {
