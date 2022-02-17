@@ -11,7 +11,6 @@ public class HealthP1 : MonoBehaviour
     public Image[] hearts; // A variable for the hearts array.
     public Sprite fullheart; // A variable for the full heart sprite.
     public Sprite emptyheart; // A variable for the empty heart sprite.
-    public Animator animator;
 
     private void Awake()
     {
@@ -21,7 +20,6 @@ public class HealthP1 : MonoBehaviour
     private void Start()
     {
         currentHealth = 3; // When the game starts your health is set to 3.
-        animator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -37,11 +35,7 @@ public class HealthP1 : MonoBehaviour
                 hearts[i].sprite = emptyheart;
             }
         }
-        // If your health is below 1 the "GameOver" scene will load.
-        /*if (currentHealth < 1)
-          {
-              SceneManager.LoadScene("Death");
-          }*/
+
         if(currentHealth == 0)
         {
             transform.position = new Vector3(-20, 20, 0);

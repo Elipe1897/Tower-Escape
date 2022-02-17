@@ -18,8 +18,12 @@ public class Player1Movment : MonoBehaviour
     private float speed = 5;
     [SerializeField] bool isGrounded = false;
     public Animator animator;
+    public float timer = 0;
+    public float freezeTimer = 0;
+    public bool ezeerf = false;
+    public bool remit = false;
 
-    public int doubbleJump = 0;
+
 
 
 
@@ -29,7 +33,7 @@ public class Player1Movment : MonoBehaviour
     {
         Hoppi = GetComponent<AudioSource>();  // gets hoppi ljud - Elias 
         animator = GetComponent<Animator>();
-        doubbleJump = 0;
+      
 
     }
 
@@ -48,7 +52,7 @@ public class Player1Movment : MonoBehaviour
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
                 Hoppi.Play(); // plays jump sound - Elias 
                 animator.SetBool("isGrounded", false);
-               powerUp();
+          
             }
             else
             {
@@ -63,7 +67,6 @@ public class Player1Movment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
        
        float moveX = Input.GetAxis("Horizontal2");
         transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed; // movement - Elias 
@@ -95,10 +98,23 @@ public class Player1Movment : MonoBehaviour
 
         }
         transform.localScale = characterScale;
-        if(doubbleJump == 2)
+        if (remit == true)
         {
-            isGrounded = false;
+            startTimer();
         }
+        if (isGrounded = true && (Input.GetKey(KeyCode.W)))
+        {
+            superJump();
+        }
+        if (ezeerf == true)
+        {
+            startFTimer();
+        }
+        if (freezeTimer < 2 && freezeTimer > 0.1)
+        {
+            transform.position -= new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed;
+        }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -120,13 +136,28 @@ public class Player1Movment : MonoBehaviour
         {
             isGrounded = true;
         }
-    }
-    public void powerUp()
-    {
-        if (doubbleJump < 2 && Input.GetKey(KeyCode.W))
+        if (collision.transform.tag == "SuperJump")
         {
-            doubbleJump += 1;
+            remit = true;
         }
+        if (collision.transform.tag == "Freeze")
+        {
+            ezeerf = true;
+
+        }
+    }
+    void superJump()
+    {
+        if (timer < 3 && timer > 0.1)
+        { gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 0.3f), ForceMode2D.Impulse); }
+    }
+    void startTimer()
+    {
+        timer += Time.deltaTime;
+    }
+    void startFTimer()
+    {
+        freezeTimer += Time.deltaTime;
 
     }
 
