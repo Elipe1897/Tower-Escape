@@ -10,13 +10,13 @@ public class Player2Movment : MonoBehaviour
     private KeyCode Left;
     [SerializeField]
     private KeyCode Right;
-    [SerializeField] Transform groundCheckCollider;
-    [SerializeField] LayerMask groundLayer;
+    [SerializeField] Transform groundCheckCollider; // gör så man kan ändra i unity - Elias 
+    [SerializeField] LayerMask groundLayer; // gör så man kan ändra i unity - Elias 
     public Animator animator;
     public AudioSource Hoppi; // hoppi ljud variabel - Elias 
     const float groundCheckRadius = 0.2f;
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
-    private float speed = 5;
+    private float speed = 5;   // sets speed till 5 - Elias 
     [SerializeField] bool isGrounded = false;
 
 
@@ -59,8 +59,9 @@ public class Player2Movment : MonoBehaviour
     {
        
        
-        float moveX = Input.GetAxis("Horizontal"); 
+        float moveX = Input.GetAxis("Horizontal"); // moveX varible för horizontal - Elias 
         transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed; // movement - Elias 
+
         if (Input.GetAxis("Horizontal") < 0)
         {
             animator.SetBool("isRunning", true);
@@ -92,12 +93,12 @@ public class Player2Movment : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-        if (collision.transform.tag == "Spike")
+        if (collision.transform.tag == "Spike") // om kollison med taggen Spike tappa 1 hjärta - leo s 
         {
             Health.instance.TakeDamage();
             
         }
-        if (collision.transform.tag == "Toxic")
+        if (collision.transform.tag == "Toxic") // om kollison med taggen Toxic dö direkt - leo s 
         {
             Health.instance.AcidDamage();
             transform.position = new Vector3(-20, 20, 0);

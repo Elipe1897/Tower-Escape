@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
+// Leo s 
 public class Health : MonoBehaviour
 {
     public static Health instance; // Creates a instance called Health. - Leo S
