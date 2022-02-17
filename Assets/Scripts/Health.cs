@@ -36,11 +36,7 @@ public class Health : MonoBehaviour
                 hearts[i].sprite = emptyheart;
             }
         }
-        // If your health is below 1 the "GameOver" scene will load.
-        /*if (currentHealth < 1)
-          {
-              SceneManager.LoadScene("Death");
-          }*/
+
         if (currentHealth == 0)
         {
             transform.position = new Vector3(-20, 20, 0);

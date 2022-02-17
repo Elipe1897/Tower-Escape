@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
     {
         if (isTimer)
         {
-            timer += Time.deltaTime;
+            timer += Time.deltaTime; 
             Displaytime(); 
         }
     }
