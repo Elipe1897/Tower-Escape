@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ThemeSong : MonoBehaviour
 {
-    public AudioSource theme;
+    public AudioSource theme; // varible for themesong sound - Elias s
     // Start is called before the first frame update
     void Start()
     {
-        theme = GetComponent<AudioSource>();
+        theme = GetComponent<AudioSource>();  // sound - Elias 
     }
 
     // Update is called once per frame

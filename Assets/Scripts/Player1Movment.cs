@@ -12,7 +12,7 @@ public class Player1Movment : MonoBehaviour
     private KeyCode Right;
     [SerializeField] Transform groundCheckCollider;
     [SerializeField] LayerMask groundLayer;
-    public AudioSource Hoppi;
+    public AudioSource Hoppi;  // hoppi ljud variabel - Elias 
     const float groundCheckRadius = 0.2f;
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
     private float speed = 5;
@@ -31,7 +31,7 @@ public class Player1Movment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Hoppi = GetComponent<AudioSource>();
+        Hoppi = GetComponent<AudioSource>();  // gets hoppi ljud - Elias 
         animator = GetComponent<Animator>();
       
 
@@ -50,7 +50,7 @@ public class Player1Movment : MonoBehaviour
             if (isGrounded = true && (Input.GetKey(KeyCode.W))) //om man nuddar en plattform och trycker ner "W" så hoppar Player1 -Lisa
             {
                 gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 15), ForceMode2D.Impulse);
-                Hoppi.Play();
+                Hoppi.Play(); // plays jump sound - Elias 
                 animator.SetBool("isGrounded", false);
           
             }
@@ -69,7 +69,7 @@ public class Player1Movment : MonoBehaviour
     {
        
        float moveX = Input.GetAxis("Horizontal2");
-        transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed;
+        transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed; // movement - Elias 
         if (Input.GetAxis("Horizontal2") < 0)
         {
             animator.SetBool("isRunning", true);
@@ -85,7 +85,7 @@ public class Player1Movment : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
-        Vector3 characterScale = transform.localScale;
+        Vector3 characterScale = transform.localScale;  // spelarens ui byter rikning beroende vilken knapp som trycks - Elias 
 
         if (Input.GetAxis("Horizontal2") < 0)
         {
@@ -126,6 +126,7 @@ public class Player1Movment : MonoBehaviour
         {
             HealthP1.instance.AcidDamage2();
             transform.position = new Vector3(-20, 20, 0);
+            Debug.Log("Dead");
         }
        if(collision.transform.tag == "Player")
         {
