@@ -70,17 +70,17 @@ public class Player1Movment : MonoBehaviour
        
        float moveX = Input.GetAxis("Horizontal2");
         transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed; // movement - Elias 
-        if (Input.GetAxis("Horizontal2") < 0)
+        if (Input.GetAxis("Horizontal2") < 0) // If you run to the left the run animation plays - Elias
         {
             animator.SetBool("isRunning", true);
          
         }
-        if (Input.GetAxis("Horizontal2") > 0)
+        if (Input.GetAxis("Horizontal2") > 0)// If you run to the right the run animation plays - Elias
         {
             animator.SetBool("isRunning", true);
           
         }
-        if (Input.GetAxis("Horizontal2") ==  0)
+        if (Input.GetAxis("Horizontal2") ==  0)// If you don't run the run animation don't play - Elias
         {
             animator.SetBool("isRunning", false);
         }
