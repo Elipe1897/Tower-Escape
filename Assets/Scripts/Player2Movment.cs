@@ -12,19 +12,19 @@ public class Player2Movment : MonoBehaviour
     private KeyCode Right;
     [SerializeField] Transform groundCheckCollider; // gör så man kan ändra i unity - Elias 
     [SerializeField] LayerMask groundLayer; // gör så man kan ändra i unity - Elias 
-    public Animator animator;
+    public Animator animator; // leo s 
     public AudioSource Hoppi; // hoppi ljud variabel - Elias 
-    const float groundCheckRadius = 0.2f;
+    const float groundCheckRadius = 0.2f; // lisa  
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
     private float speed = 5;   // sets speed till 5 - Elias 
-    [SerializeField] bool isGrounded = false;
+    [SerializeField] bool isGrounded = false; // variable isGrounded = false - Elias 
 
 
     // Start is called before the first frame update
     void Start()
     {
         Hoppi = GetComponent<AudioSource>(); // gets hoppi ljud - Elias
-        animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>(); // Leo s 
     }
 
     private void FixedUpdate()
@@ -62,17 +62,17 @@ public class Player2Movment : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal"); // moveX varible för horizontal - Elias 
         transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed; // movement - Elias 
 
-        if (Input.GetAxis("Horizontal") < 0)
+        if (Input.GetAxis("Horizontal") < 0)   // If you run to the left the run animation plays - Elias
         {
             animator.SetBool("isRunning", true);
 
         }
-        if (Input.GetAxis("Horizontal") > 0)
+        if (Input.GetAxis("Horizontal") > 0) // If you run to the right the run animation plays - Elias
         {
             animator.SetBool("isRunning", true);
 
         }
-        if (Input.GetAxis("Horizontal") == 0)
+        if (Input.GetAxis("Horizontal") == 0)   // If you don't run the runanimation don't play - Elias
         {
             animator.SetBool("isRunning", false);
         }

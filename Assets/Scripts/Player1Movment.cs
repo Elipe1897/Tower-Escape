@@ -10,19 +10,15 @@ public class Player1Movment : MonoBehaviour
     private KeyCode Left;
     [SerializeField]
     private KeyCode Right;
-    [SerializeField] Transform groundCheckCollider;
-    [SerializeField] LayerMask groundLayer;
+    [SerializeField] Transform groundCheckCollider; // gör så man kan ändra i unity - Elias
+    [SerializeField] LayerMask groundLayer; // gör så man kan ändra i unity - Elias
     public AudioSource Hoppi;  // hoppi ljud variabel - Elias 
-    const float groundCheckRadius = 0.2f;
+    const float groundCheckRadius = 0.2f; // lisa 
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
-    private float speed = 5;
-    [SerializeField] bool isGrounded = false;
-    public Animator animator;
-    public float timer = 0;
-    public float freezeTimer = 0;
-    public bool ezeerf = false;
-    public bool remit = false;
-
+    private float speed = 5;     // sets speed till 5 - Elias
+    [SerializeField] bool isGrounded = false; // variable isGrounded = false - Elias 
+    public Animator animator; // leo s 
+    
 
 
 
@@ -32,7 +28,7 @@ public class Player1Movment : MonoBehaviour
     void Start()
     {
         Hoppi = GetComponent<AudioSource>();  // gets hoppi ljud - Elias 
-        animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>(); // leo s
       
 
     }
@@ -80,7 +76,7 @@ public class Player1Movment : MonoBehaviour
             animator.SetBool("isRunning", true);
           
         }
-        if (Input.GetAxis("Horizontal2") ==  0)// If you don't run the run animation don't play - Elias
+        if (Input.GetAxis("Horizontal2") ==  0) // If you don't run the runanimation don't play - Elias
         {
             animator.SetBool("isRunning", false);
         }
@@ -98,67 +94,30 @@ public class Player1Movment : MonoBehaviour
 
         }
         transform.localScale = characterScale;
-        if (remit == true)
-        {
-            startTimer();
-        }
-        if (isGrounded = true && (Input.GetKey(KeyCode.W)))
-        {
-            superJump();
-        }
-        if (ezeerf == true)
-        {
-            startFTimer();
-        }
-        if (freezeTimer < 2 && freezeTimer > 0.1)
-        {
-            transform.position -= new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed;
-        }
+        
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Spike")
+        if (collision.transform.tag == "Spike") // om kollison med taggen Spike tappa 1 hjärta - leo s 
         {
             HealthP1.instance.TakeDamage2();
         }
-        if (collision.transform.tag == "Toxic")
+        if (collision.transform.tag == "Toxic")  // om kollison med taggen Toxic dö direkt - leo s 
         {
             HealthP1.instance.AcidDamage2();
             transform.position = new Vector3(-20, 20, 0);
             Debug.Log("Dead");
         }
-       if(collision.transform.tag == "Player")
+       if(collision.transform.tag == "Player") // om kollsion tag = Player loada Death scene - Leo n
         {
             SceneManager.LoadScene("Death");
         }
-       if(collision.transform.tag == "Platform")
+       if(collision.transform.tag == "Platform") // om kollison tag = Platform then isGrounded = true - Lisa 
         {
             isGrounded = true;
         }
-        if (collision.transform.tag == "SuperJump")
-        {
-            remit = true;
-        }
-        if (collision.transform.tag == "Freeze")
-        {
-            ezeerf = true;
-
-        }
+       
     }
-    void superJump()
-    {
-        if (timer < 3 && timer > 0.1)
-        { gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 0.3f), ForceMode2D.Impulse); }
-    }
-    void startTimer()
-    {
-        timer += Time.deltaTime;
-    }
-    void startFTimer()
-    {
-        freezeTimer += Time.deltaTime;
-
-    }
-
+    
 }
