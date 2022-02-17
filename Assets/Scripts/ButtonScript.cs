@@ -10,6 +10,10 @@ public class ButtonScript : MonoBehaviour
     {
         
     }
+    public void heheheha()
+    {
+        Application.OpenURL("https://www.youtube.com/watch?v=Sag4AGymNr0&ab_channel=HaVoCGaming");
+    }
     public void play()
     {
         SceneManager.LoadScene("Main"); //Loads the game scene - Leo N

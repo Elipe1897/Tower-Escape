@@ -13,12 +13,12 @@ public class Acid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+     /*   timer += Time.deltaTime;
        
             if(timer > 2)
         {
             transform.position += new Vector3(0, 1f, 0) * Time.deltaTime;
         }
-        
+        */
     }
 }

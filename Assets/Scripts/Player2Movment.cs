@@ -18,6 +18,10 @@ public class Player2Movment : MonoBehaviour
     [SerializeField, Range(1, 10)]      //variabel som bestämmer hur snabbt man går -Lisa
     private float speed = 5;
     [SerializeField] bool isGrounded = false;
+    public float timer = 0;
+    public float freezeTimer = 0;
+    public bool ezeerf = false;
+    public bool remit = false;
 
 
     // Start is called before the first frame update
@@ -57,15 +61,8 @@ public class Player2Movment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.LeftArrow))     //om man trycker ner vänstra pilt<ngänten åker Player2 vänster -Lisa
-        {
-            transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))    //om man trycker ner högra piltangänten åker Player2 höger -Lisa
-        {
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
-        }*/
-       
+
+
         float moveX = Input.GetAxis("Horizontal");
         transform.position += new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed;
         if (Input.GetAxis("Horizontal") < 0)
@@ -96,20 +93,61 @@ public class Player2Movment : MonoBehaviour
 
         }
         transform.localScale = characterScale;
+        if(remit == true)
+        {
+            startTimer();
+        }
+        if (isGrounded = true && (Input.GetKey(KeyCode.UpArrow)))
+        {
+            superJump();
+        }
+        if (ezeerf == true)
+        {
+            startFTimer();
+        }
+        if (freezeTimer < 2 && freezeTimer > 0.1)
+        {
+            transform.position -= new Vector3(moveX, 0f, 0f) * Time.deltaTime * speed;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Spike")
         {
             Health.instance.TakeDamage();
-            
+
         }
         if (collision.transform.tag == "Toxic")
         {
             Health.instance.AcidDamage();
             transform.position = new Vector3(-20, 20, 0);
         }
-       
+        if(collision.transform.tag == "SuperJump")
+        {
+            remit = true;
+        }
+        if (collision.transform.tag == "Freeze")
+        {
+            ezeerf = true;
+            
+        }
+
+
+    }
+
+    void superJump()
+    {
+        if (timer < 3 && timer > 0.1)
+        { gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 0.15f), ForceMode2D.Impulse); }
+    }
+    void startTimer()
+    {
+        timer += Time.deltaTime;
+    }
+    void startFTimer()
+    {
+        freezeTimer += Time.deltaTime;
 
     }
 }
+
