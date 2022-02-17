@@ -10,7 +10,7 @@ public class OpenDoor : MonoBehaviour
     {
         animator = GetComponentInParent<Animator>(); // Gets the animator from the parent - Leo S
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) 
     {
         if(collision.transform.tag == "Player1") // If it collides with player 1 it loads the open door animation and teleports the key to a box - Leo S
         {
