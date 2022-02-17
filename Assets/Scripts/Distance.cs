@@ -28,15 +28,15 @@ public class Distance : MonoBehaviour
     }
     void fullscreen()
     {
-        split1.SetActive(false);
-        split2.SetActive(false);
-        fullScreen.SetActive(true);
+        split1.SetActive(false);   // sätter kamera till split 1 false  - leo s 
+        split2.SetActive(false);     // sätter kamera till split 2 false - leo s 
+        fullScreen.SetActive(true);  // sätter på fullscren kamera - leo s 
     }
     void splitScreen()
     {
-        split1.SetActive(true);
-        split2.SetActive(true);
-        fullScreen.SetActive(false);
+        split1.SetActive(true); // sätter kamera till split 1 true - leo s 
+        split2.SetActive(true); // sätter kamera till split 1 true  - leo s 
+        fullScreen.SetActive(false); // sätter fullscren kamera till false - leo s 
 
     }
 }
