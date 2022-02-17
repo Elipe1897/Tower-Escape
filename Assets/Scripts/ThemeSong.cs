@@ -14,6 +14,6 @@ public class ThemeSong : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        theme.Play();
+        theme.Play(); // Plays the sound - Elias
     }
 }
