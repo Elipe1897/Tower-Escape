@@ -17,7 +17,15 @@ public class ButtonScript : MonoBehaviour
     }
     public void play()
     {
+        SceneManager.LoadScene("LvlSelection"); //Loads the game scene 
+    }
+    public void Lvl1()
+    {
         SceneManager.LoadScene("Main"); //Loads the game scene 
+    }
+    public void Lvl2()
+    {
+        SceneManager.LoadScene("Lvl2"); //Loads the game scene 
     }
     public void settings()
     {
